@@ -1,0 +1,38 @@
+// Create each expression as a separate measure. Fractions use Percentage formatting.
+// Page 1. Multi-day context reports the maximum observed daily peak.
+Steam peak concurrent players = MAX(Players[steam_peak_concurrent_players])
+
+Peak 7-day mean = IF(HASONEVALUE('Date'[DateKey]), MAX(Players[steam_peak_7d_mean]))
+
+Sampled maximum = MAX(Players[sampled_max_concurrent_players])
+
+Peak days observed = COUNT(Players[steam_peak_concurrent_players])
+
+Calendar days selected = COUNTROWS(VALUES('Date'[DateKey]))
+
+Positive reviews = CALCULATE(SUM(Reviews[positive]), Reviews[completeness] = "complete")
+
+Negative reviews = CALCULATE(SUM(Reviews[negative]), Reviews[completeness] = "complete")
+
+Review positivity = DIVIDE([Positive reviews], [Positive reviews] + [Negative reviews])
+
+// Page 2. No total across cases. No DAX re-implementation of analysis windows.
+Short-term lift = IF(HASONEVALUE(Scorecard[case_id]), SELECTEDVALUE(Scorecard[short_term_lift_pct]))
+
+Sustained lift = IF(HASONEVALUE(Scorecard[case_id]), SELECTEDVALUE(Scorecard[sustained_lift_pct]))
+
+Review change pp = IF(HASONEVALUE(Scorecard[case_id]), SELECTEDVALUE(Scorecard[review_change_pp]))
+
+Prior month positivity = IF(HASONEVALUE(Scorecard[case_id]), SELECTEDVALUE(Scorecard[prior_review_pct]))
+
+Event month positivity = IF(HASONEVALUE(Scorecard[case_id]), SELECTEDVALUE(Scorecard[event_review_pct]))
+
+Case-day Steam peak = IF(HASONEVALUE(Scorecard[case_id]) && HASONEVALUE(CaseTimeline[relative_day]), MAX(CaseTimeline[steam_peak_concurrent_players]))
+
+// A single selected case supplies the month key for the review count card.
+Event month review count = VAR MonthKey = SELECTEDVALUE(Scorecard[review_month])
+RETURN IF(NOT ISBLANK(MonthKey), CALCULATE(SUM(Reviews[total]), Reviews[completeness] = "complete", TREATAS({MonthKey}, 'Month'[MonthStart])))
+
+Case evidence note = SWITCH(SELECTEDVALUE(Scorecard[case_id]), "june_2024", "Same-day Viper Commandos release. June sentiment follows the PSN episode.", "september_2024", "Chemical Agents follows the patch. Another balance pass falls inside the later window.", "psn_2024", "Announcement and reversal share one launch window and one review month.", "Choose one case.")
+
+Draft next step = "DRAFT — requires my review. Investigate returning players' loadout variety after September before proposing another balance pass."

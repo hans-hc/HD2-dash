@@ -1,0 +1,56 @@
+{
+  "calendar_start": "2024-02-08",
+  "calendar_end": "2026-11-03",
+  "players": {
+    "status": "Reviewed chart-format inference",
+    "daily_peak_start": "2024-02-08",
+    "daily_peak_end": "2026-10-04",
+    "header": [
+      "DateTime",
+      "Players",
+      "Average Players"
+    ],
+    "raw_time_range": [
+      "2017-08-14 00:00:00",
+      "2026-11-04 02:30:00"
+    ],
+    "sha256": "704a5be2741816d01b2662bbd18bdb0bb37088869cee3d7e9c64a9e34c4c53d6",
+    "daily_peak_basis": "970 paired midnight buckets; peak >= supplied average throughout; record-day bucket = 458709. Midnight is a date label, not the instant of the record.",
+    "timezone": "No offset in CSV. UTC chart-day interpretation inferred from the known UTC peak date and last sample versus export time. Owner should confirm chart timezone.",
+    "intraday_policy": "Subdaily values kept separately as sampled maxima. No daily-peak substitution.",
+    "calendar_days_by_method": {
+      "daily chart rollup": 970,
+      "sampled maximum only": 30
+    }
+  },
+  "reviews": {
+    "status": "Histogram available",
+    "raw_start": "2024-02-08",
+    "raw_end": "2026-11-04",
+    "rollup_type": "month",
+    "raw_arrays": {
+      "rollups": 34,
+      "weeks": 0,
+      "recent": 30
+    },
+    "complete_months": 32,
+    "filter_id": "count_all_reviews=false; language=unknown; off_topic=unknown",
+    "metadata": {
+      "success": 1,
+      "count_all_reviews": false,
+      "expand_graph": false
+    },
+    "recent_start": "2026-10-06",
+    "recent_end": "2026-11-04"
+  },
+  "timeline": {
+    "news_items": 825,
+    "official_posts": 169,
+    "oldest_news": "2023-09-14",
+    "newest_news": "2026-11-03",
+    "pagination": "reached_launch",
+    "wiki_versions_parsed": 99,
+    "normalized_releases": 101,
+    "events": 192
+  }
+}

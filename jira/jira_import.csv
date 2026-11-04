@@ -1,0 +1,113 @@
+Work item ID,Work type,Parent,Summary,Description,Priority,Labels
+1,Epic,,Discovery and scope,"Define the decision and feasible public evidence.
+Acceptance: Reader, limits and source intake are documented and reviewed.
+Owner: Owner
+Local evidence: confluence/01_problem_brief.md
+Local work state: Review
+Priority rationale: Defines the work that follows. (DRAFT — requires my review)
+Depends on: none recorded",High,hd2-local-d00
+2,Epic,,Evidence and analysis,"Make the case comparisons reproducible.
+Acceptance: All selected anchors, windows and uncertainty are traceable.
+Owner: Owner
+Local evidence: outputs/validation_report.csv
+Local work state: Review
+Priority rationale: Protects the validity of the proposal. (DRAFT — requires my review)
+Depends on: D00",High,hd2-local-e00
+3,Epic,,Recommendation and communication,"Turn evidence into a focused proposal and a usable portfolio.
+Acceptance: Owner approves recommendation and publishes reviewed materials.
+Owner: Owner
+Local evidence: confluence/index.md
+Local work state: Backlog
+Priority rationale: Depends on accepted analysis. (DRAFT — requires my review)
+Depends on: E00",Medium,hd2-local-r00
+4,Task,1,Frame the planning decision,"Narrow the question to the next discovery investment.
+Acceptance: Reader, decision, alternatives, success and scope appear in brief.
+Owner: Project owner
+Local evidence: confluence/01_problem_brief.md
+Local work state: Draft ready for review
+Priority rationale: Avoids building a dashboard without a decision. (DRAFT — requires my review)
+Depends on: none recorded",High,hd2-local-d01
+5,Task,1,Inspect the manual player export,"Separate daily buckets from intraday samples.
+Acceptance: Raw snapshot has a hash, schema, date profile and benchmark check.
+Owner: Pipeline
+Local evidence: curated/coverage.json
+Local work state: Local implementation complete
+Priority rationale: Every activity metric depends on the grain. (DRAFT — requires my review)
+Depends on: D01",High,hd2-local-d02
+6,Task,1,Record retrospective hypotheses,"Capture the owner's expectations and timing.
+Acceptance: Each intended assessment has wording, direction, metric, threshold and actual date, or is explicitly declined.
+Owner: Human owner
+Local evidence: inputs/hypotheses.csv
+Local work state: Pending
+Priority rationale: Keeps retrospective expectations transparent. (DRAFT — requires my review)
+Depends on: D01",High,hd2-local-d03
+7,Task,1,Confirm chart timezone and rollup interpretation,"Verify the empirical UTC/daily interpretation from the browser.
+Acceptance: Owner records evidence for chart-day semantics or marks the inference provisional.
+Owner: Human owner
+Local evidence: inputs/README.md
+Local work state: Pending
+Priority rationale: Could change daily alignment and eligibility. (DRAFT — requires my review)
+Depends on: D02",High,hd2-local-d04
+8,Task,2,Collect immutable public evidence,"Save official news, wiki history and review histogram.
+Acceptance: Manifest, hashes and source-specific filters resolve to local snapshots.
+Owner: Pipeline
+Local evidence: curated/source_register.csv
+Local work state: Local implementation complete
+Priority rationale: Makes observed claims reproducible. (DRAFT — requires my review)
+Depends on: D01",High,hd2-local-e01
+9,Task,2,Verify three event mappings,"Match official UTC dates, policy amendment and release aliases.
+Acceptance: All anchors link to sources; owner reviews suggested release classifications.
+Owner: Human owner
+Local evidence: curated/events.csv
+Local work state: Source checks complete; owner review pending
+Priority rationale: Incorrect anchors invalidate every window. (DRAFT — requires my review)
+Depends on: E01",High,hd2-local-e02
+10,Task,2,Audit windows and monthly sentiment,"Check counts, missing values, weighted positivity and baseline sensitivity.
+Acceptance: Validation passes integrity checks and discloses coverage warnings.
+Owner: Pipeline
+Local evidence: outputs/validation_report.csv
+Local work state: Local implementation complete
+Priority rationale: Separates defensible results from missing observations. (DRAFT — requires my review)
+Depends on: D02|E01",High,hd2-local-e03
+11,Task,2,Review nearby events and trends,"Identify alternative explanations per selected case.
+Acceptance: Review same-day content, pre-trends, later patches and unknown sales exposure.
+Owner: Human owner
+Local evidence: confluence/02_evidence_and_event_studies.md
+Local work state: Draft ready for review
+Priority rationale: Limits over-attribution. (DRAFT — requires my review)
+Depends on: E02|E03",High,hd2-local-e04
+12,Task,3,Rank three product options,"Balance decision value, confidence and assumed effort.
+Acceptance: Owner records ranking, tradeoffs and unresolved dependencies.
+Owner: Human owner
+Local evidence: inputs/decision_inputs.csv
+Local work state: Pending
+Priority rationale: Determines the recommendation. (DRAFT — requires my review)
+Depends on: E04",High,hd2-local-r01
+13,Task,3,Review the investigation design,"Specify a cohort diagnostic, guardrails and falsification criteria.
+Acceptance: Owner signs off on the primary metric, thresholds and follow-up decision.
+Owner: Human owner
+Local evidence: confluence/04_recommendation_and_measurement_plan.md
+Local work state: Draft ready for review
+Priority rationale: Prevents an aggregate trend from being treated as a retention result. (DRAFT — requires my review)
+Depends on: R01",High,hd2-local-r02
+14,Task,3,Assemble and verify two Power BI pages,"Build the report locally on Windows.
+Acceptance: Each selector, month filter, card and relative-day trend matches the Python outputs.
+Owner: Human owner
+Local evidence: powerbi/build_guide.md
+Local work state: Build kit ready; Desktop assembly pending
+Priority rationale: Needed for the portfolio walkthrough. (DRAFT — requires my review)
+Depends on: E03",Medium,hd2-local-r03
+15,Task,3,Review portfolio narrative and decision log,"Finalize the case study and record actual feedback.
+Acceptance: Claims trace to evidence and distinguish performed work from proposed research.
+Owner: Human owner
+Local evidence: case-study/case_study_draft.md
+Local work state: Draft ready for review
+Priority rationale: Makes ownership and reasoning clear. (DRAFT — requires my review)
+Depends on: R02",Medium,hd2-local-r04
+16,Task,3,Publish reviewed materials and record walkthrough,"Prepare final portfolio artifacts on the owner's chosen services.
+Acceptance: Owner completes Jira import, Confluence review, walkthrough and publication checklist.
+Owner: Human owner
+Local evidence: TODO_HUMAN.md
+Local work state: Pending
+Priority rationale: Only approved material should be shared. (DRAFT — requires my review)
+Depends on: R03|R04",Medium,hd2-local-r05

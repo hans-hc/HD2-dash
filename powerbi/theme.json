@@ -1,0 +1,16 @@
+{
+  "name": "HD2 • Field notes",
+  "dataColors": [
+    "#F4CC56",
+    "#6DC5BF",
+    "#DF8F79",
+    "#A3AFD4",
+    "#A5B5BE"
+  ],
+  "background": "#14252D",
+  "foreground": "#EFF3F2",
+  "tableAccent": "#F4CC56",
+  "good": "#6DC5BF",
+  "neutral": "#F4CC56",
+  "bad": "#DF8F79"
+}

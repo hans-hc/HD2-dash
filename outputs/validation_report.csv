@@ -1,0 +1,75 @@
+check,status,detail
+Raw checksum raw/reviews/20261104T023436104491Z_b599181a.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/patches/20261104T023437080090Z_60850695.html,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/patches/20261104T023438715277Z_6ca384fe.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/news/20261104T023439842215Z_9a54f7fe.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/news/20261104T023440429808Z_c30d407d.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/news/20261104T023441493064Z_f377916c.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/news/20261104T023442537090Z_e2a37a3f.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/news/20261104T023443583653Z_e59cee6f.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/news/20261104T023444556155Z_40ada5d5.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/news/20261104T023445803567Z_61632c3f.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/news/20261104T023446693581Z_0c46b354.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/news/20261104T023447650679Z_cc41f4a8.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/manual/704a5be2741816d01b2662bbd18bdb0bb37088869cee3d7e9c64a9e34c4c53d6.csv,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/official_pages/20261104T024300445589Z_081f68cb.html,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/official_pages/20261104T024301599145Z_301b0c4b.html,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/official_pages/20261104T024302584947Z_96dc9a0d.html,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/patch_crosscheck/20261104T024504007026Z_c6eb5f3d.json,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/anchor_pages/20261104T024534421061Z_0cdea014.html,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/anchor_pages/20261104T024535489807Z_717fe456.html,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/anchor_pages/20261104T024536320822Z_6dedc7d7.html,PASS,SHA-256 compared with saved manifest
+Raw checksum raw/benchmark/20261104T024536976453Z_fc52e47b.html,PASS,SHA-256 compared with saved manifest
+players schema,PASS,date form the key
+players unique keys,PASS,1000 rows
+releases schema,PASS,release_id form the key
+releases unique keys,PASS,101 rows
+events schema,PASS,event_id form the key
+events unique keys,PASS,192 rows
+reviews schema,PASS,period_start form the key
+reviews unique keys,PASS,34 rows
+review_buckets schema,PASS,"series, bucket_start form the key"
+review_buckets unique keys,PASS,64 rows
+news schema,PASS,news_id form the key
+news unique keys,PASS,825 rows
+Complete calendar,PASS,2024-02-08 through 2026-11-03
+Daily peaks / original CSV,PASS,970 exact integer comparisons; no imputation
+Daily peak coverage,WARN,970/1000 days have daily peaks. See observation_method for excluded days.
+Player numeric range,PASS,Nonnegative integral counts
+No filled gaps,PASS,Missing/sampled rows have blank peak values
+Rolling seven observations,PASS,Every daily value independently checked
+Peak spot-check,PASS,"2024-02-24 export = 458709 vs 458,709. Tolerance 0: integral same-source published record. No adjustment."
+Timestamp basis,WARN,No offset in CSV. UTC chart-day interpretation inferred from the known UTC peak date and last sample versus export time. Owner should confirm chart timezone.
+Monthly count and percentage identity,PASS,Weighted positivity = positive / total
+Non-overlapping calendar months,PASS,Monthly table uses one series at a time
+Partial review months,WARN,"Excluded from month comparisons: 2024-02-01, 2026-11-01"
+News history,PASS,"825 unique IDs; first response reports 825; boundary 2023-09-14, reached_launch"
+Historical review series,PASS,34 calendar month buckets
+hypotheses input IDs,PASS,Expected stable IDs appear once each
+decision_inputs input IDs,PASS,Expected stable IDs appear once each
+Official mapping june_2024,PASS,2024-06-13 PATCH 01.000.400
+Official mapping september_2024,PASS,2024-09-17 Patch 1.001.100
+Official mapping psn_2024,PASS,2024-05-03 HELLDIVERS™ 2 Account Linking Update
+PSN amendment,PASS,"One source, two events, one case"
+Release links,PASS,Every linked release resolves
+Secondary date discrepancies,WARN,"Inspect in Releases: release-1.002.203, release-1.003.201"
+Timeline date range,PASS,Dates parsed and checked against analysis horizon
+june_2024 14d baseline,PASS,"14/14, 4/4, 14/14. eligible"
+september_2024 14d baseline,PASS,"14/14, 4/4, 14/14. eligible"
+psn_2024 14d baseline,PASS,"14/14, 4/4, 14/14. eligible"
+june_2024 7d baseline,PASS,"7/7, 4/4, 14/14. eligible"
+june_2024 28d baseline,PASS,"28/28, 4/4, 14/14. eligible"
+september_2024 7d baseline,PASS,"7/7, 4/4, 14/14. eligible"
+september_2024 28d baseline,PASS,"28/28, 4/4, 14/14. eligible"
+psn_2024 7d baseline,PASS,"7/7, 4/4, 14/14. eligible"
+psn_2024 28d baseline,PASS,"28/28, 4/4, 14/14. eligible"
+Excel / CSV Decision brief,PASS,3 rows and all columns reconciled
+Excel / CSV Prioritization,PASS,3 rows and all columns reconciled
+Excel / CSV Hypotheses,PASS,3 rows and all columns reconciled
+Excel / CSV Event review,PASS,192 rows and all columns reconciled
+Excel / CSV Players,PASS,1000 rows and all columns reconciled
+Excel / CSV Releases,PASS,101 rows and all columns reconciled
+Excel / CSV Events,PASS,192 rows and all columns reconciled
+Excel / CSV Reviews,PASS,34 rows and all columns reconciled
+Export impact_scorecard,PASS,Recomputed from curated tables and human inputs
+Export sensitivity_checks,PASS,Recomputed from curated tables and human inputs

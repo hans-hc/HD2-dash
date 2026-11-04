@@ -1,0 +1,5 @@
+# Preserve hashes of saved evidence and the inputs referenced by review workbooks.
+raw/** -text -diff
+*.csv -text
+*.xlsx binary
+*.png binary

@@ -1,0 +1,17 @@
+{
+  "collector": "reviews",
+  "url": "https://store.steampowered.com/appreviewhistogram/553850?l=english",
+  "retrieved_at": "2026-11-04T02:34:36+00:00",
+  "path": "raw/reviews/20261104T023436104491Z_b599181a.json",
+  "sha256": "185187066790ada198f465a5068d94e0a23ff4f847f515dea5fe870579853310",
+  "bytes": 4825,
+  "status_code": 200,
+  "content_type": "application/json; charset=utf-8",
+  "user_agent": "HD2-PM-Portfolio/1.0 (independent educational research; cached requests; github.com/hans-hc/HD2-dash)",
+  "request_filters": {
+    "l": "english",
+    "review_language": "unknown",
+    "off_topic": "unknown"
+  },
+  "coverage": "See curated/coverage.json; raw response preserved without inference"
+}

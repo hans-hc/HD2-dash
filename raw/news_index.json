@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "raw/news/20261104T023439842215Z_9a54f7fe.json",
+    "raw/news/20261104T023440429808Z_c30d407d.json",
+    "raw/news/20261104T023441493064Z_f377916c.json",
+    "raw/news/20261104T023442537090Z_e2a37a3f.json",
+    "raw/news/20261104T023443583653Z_e59cee6f.json",
+    "raw/news/20261104T023444556155Z_40ada5d5.json",
+    "raw/news/20261104T023445803567Z_61632c3f.json",
+    "raw/news/20261104T023446693581Z_0c46b354.json",
+    "raw/news/20261104T023447650679Z_cc41f4a8.json"
+  ],
+  "oldest_date": "2023-09-14",
+  "stop_reason": "reached_launch",
+  "unique_items": 825,
+  "pagination_caveat": "A >100-item tie at a page boundary is not ruled out by this API."
+}

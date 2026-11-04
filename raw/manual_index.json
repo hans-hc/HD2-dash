@@ -1,0 +1,25 @@
+{
+  "collector": "players_manual",
+  "url": "https://steamdb.info/app/553850/charts/",
+  "retrieved_at": "2026-11-04T02:40:42+00:00",
+  "retrieval_note": "Local intake time. Exact browser download time was not supplied.",
+  "path": "raw/manual/704a5be2741816d01b2662bbd18bdb0bb37088869cee3d7e9c64a9e34c4c53d6.csv",
+  "original_name": "steamdb_chart_553850.csv",
+  "sha256": "704a5be2741816d01b2662bbd18bdb0bb37088869cee3d7e9c64a9e34c4c53d6",
+  "bytes": 135914,
+  "headers": [
+    "DateTime",
+    "Players",
+    "Average Players"
+  ],
+  "rows": 4905,
+  "coverage": [
+    "2017-08-14 00:00:00",
+    "2026-11-04 02:30:00"
+  ],
+  "request_filters": {
+    "application": "553850",
+    "timezone_field": "absent",
+    "resolution": "inspected by calendar date"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "workbook_sha256": "da4b8affffb5d38fc6721544ee5ceff30faa17632a2be6484c3ac75897661632",
+  "inputs": {
+    "hypotheses": "83e7bd72240434504314e1e0d1f85d6916458f128954f3b7650ab718f6ab6410",
+    "event_reviews": "91d6b544829a1b9626e214f23024f993ad3efaa4cf898ce984d6e244825fd4a7",
+    "decision_inputs": "bd71cb5edd61586d95d863b8330bbbb310386aa39c01b8461a52227993a45957"
+  }
+}

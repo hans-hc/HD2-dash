@@ -1,0 +1,30 @@
+{
+  "responses": [
+    {
+      "collector": "patches",
+      "url": "https://helldivers.wiki.gg/wiki/Game_Version",
+      "retrieved_at": "2026-11-04T02:34:37+00:00",
+      "path": "raw/patches/20261104T023437080090Z_60850695.html",
+      "sha256": "9f98f07f10b71e2a48c32db96c49823614f5affdb113518bfcf0ff5b1a91aa7b",
+      "bytes": 53247,
+      "status_code": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "user_agent": "HD2-PM-Portfolio/1.0 (independent educational research; cached requests; github.com/hans-hc/HD2-dash)",
+      "request_filters": {},
+      "coverage": "See curated/coverage.json; raw response preserved without inference"
+    },
+    {
+      "collector": "patches",
+      "url": "https://helldivers.wiki.gg/api.php?action=parse&page=Game_Version&prop=text&format=json",
+      "retrieved_at": "2026-11-04T02:34:38+00:00",
+      "path": "raw/patches/20261104T023438715277Z_6ca384fe.json",
+      "sha256": "362cc47a855ff120fe8ae0e7dc94283f9dcb09421fd50d51a990a22132b16d07",
+      "bytes": 17108,
+      "status_code": 200,
+      "content_type": "application/json; charset=utf-8",
+      "user_agent": "HD2-PM-Portfolio/1.0 (independent educational research; cached requests; github.com/hans-hc/HD2-dash)",
+      "request_filters": {},
+      "coverage": "See curated/coverage.json; raw response preserved without inference"
+    }
+  ]
+}

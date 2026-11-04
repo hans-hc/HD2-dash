@@ -1,0 +1,36 @@
+let
+    Source = fxCsv("outputs/impact_scorecard.csv", {
+        {"case_id", type text},
+        {"anchor_event_id", type text},
+        {"anchor_date", type date},
+        {"event_name", type text},
+        {"verification", type text},
+        {"baseline_days", Int64.Type},
+        {"baseline_n", Int64.Type},
+        {"launch_n", Int64.Type},
+        {"later_n", Int64.Type},
+        {"baseline_status", type text},
+        {"launch_status", type text},
+        {"later_status", type text},
+        {"launch_window_max", type number},
+        {"day22_35_avg", type number},
+        {"short_term_lift_pct", type number},
+        {"sustained_lift_pct", type number},
+        {"activity_status", type text},
+        {"baseline_events", type text},
+        {"launch_events", type text},
+        {"intervening_events", type text},
+        {"later_events", type text},
+        {"pre14_avg", type number},
+        {"review_month", type date},
+        {"prior_review_pct", type number},
+        {"event_review_pct", type number},
+        {"review_change_pp", type number},
+        {"review_status", type text},
+        {"confounder_count", Int64.Type},
+        {"pretrend_pct", type number},
+        {"hypothesis_assessment", type text},
+        {"assessment_reason", type text}
+    })
+in
+    Source

@@ -1,0 +1,13 @@
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.env*
+raw/steamdb*
+raw/manual/
+inputs/archive/
+outputs/workbook_previews/
+outputs/workbook_payload.json
+*.pbix
+**/.pbi/
