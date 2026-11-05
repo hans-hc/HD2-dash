@@ -1,5 +1,5 @@
 # Decision log and optional research
-Method choices below describe the implemented analysis. Product choices are **DRAFT — requires my review**. No human approval or interviews have been recorded.
+Method choices below describe the implemented analysis. On November 5, 2026, Hansen selected content timing as the next investigation after viewing the original results. Final recommendation wording and numerical acceptance thresholds remain under review. No interviews have been recorded.
 
 | Choice | Evidence and alternative | Confidence and reopening condition |
 |---|---|---|
@@ -7,7 +7,7 @@ Method choices below describe the implemented analysis. Product choices are **DR
 | Use the historical daily portion of the manual export | Each day has one midnight-labeled row with a distinct average, including the intraday all-time record on its known date. Later hourly/ten-minute values are separate sampled maxima. | Empirical identification. Confirm chart timezone and grouping with the owner. Recompute if a verified export contradicts this interpretation. |
 | Compare complete monthly review rollups | Steam returned both monthly rollups and a recent daily overlay. Counts are retained once per month. | High on bucket identity. Review edits, filters and self-selection limit retrospective inference. |
 | Count June's explanation once with its patch; resolve the September 18 hotfix alias | Official notes and wiki 1.001.101 describe matching host-migration and shield fixes on one date. Preserve the Steam title HOT FIX 01.001.001. | Strong content/date match. Reopen if a distinct release is documented. |
-| Investigate September loadout variety first | Positive later lift across three baselines, plus documented design intent. Alternatives are combined content cadence and policy messaging. | Medium confidence in discovery value, unknown confidence in a gameplay intervention. A different cohort mix or an access barrier could change priority. |
+| Investigate content timing using public evidence (Hansen, November 5, 2026) | Owner selected this direction after viewing the three-case results. Expanded to eight post-launch 2024 Warbonds, retaining both favorable and unfavorable outcomes. [Extension](../case-study/content_timing.md). | Similar gaps show mixed outcomes. No timing intervention is approved; final recommendation wording remains pending. Reopen if comparable releases show a repeatable timing association. |
 
 ## Player discussion guide
 Recruit only if the owner chooses to do research and has appropriate consent. Ask separately about a concrete session and the player's interpretation. “Think about the last time you returned after a break. What prompted that session?” “Which equipment did you choose and why?” “Describe an occasion you tried another option. What happened on the next mission?” “Did access requirements, content, friends, or patch notes affect that decision?” “What would have made you stop?” These questions can clarify mechanisms, language and barriers. They cannot estimate prevalence or prove an effect.

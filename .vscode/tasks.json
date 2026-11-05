@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build case study PDF",
+      "type": "process",
+      "command": "/opt/homebrew/bin/tectonic",
+      "args": [
+        "--synctex",
+        "--keep-logs",
+        "Hansen_Cheng_Helldivers2_Case_Study.tex"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/case-study"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

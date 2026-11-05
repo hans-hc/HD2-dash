@@ -5,7 +5,7 @@ Which event deserves a deeper product investigation after the launch spike fades
 
 ![Short-term versus sustained Steam peak changes around three events](outputs/charts/lift_comparison.png)
 
-**DRAFT — requires my review.** Investigate whether returning players used a wider range of effective loadouts after September's armor and weapon overhaul. Its later average remained above baseline. June's early rise faded, while May's compound policy episode coincided with lower activity and a much less positive review mix. The study supports a discovery decision. It does not identify the individuals who returned or isolate any patch's effect.
+**Current direction: content timing, selected November 5, 2026.** An exploratory extension compares eight 2024 Warbond releases. Similar patch-to-content gaps had mixed later activity, so the recommendation is to evaluate whole release sequences at launch, weekly and later checkpoints before changing cadence. [Content-timing findings and methods](case-study/content_timing.md). The study does not identify individual returning players or isolate any release’s effect. Final wording remains under owner review.
 
 | Event (2024) | Short-term lift | Sustained lift | Month vs prior month, positivity |
 |---|---:|---:|---:|
@@ -17,7 +17,7 @@ Short-term compares the days 0–3 maximum with the prior 14-day mean of Steam p
 
 ## Read or review
 - [Portfolio case study](case-study/case_study_draft.md) and [product proposal](confluence/04_recommendation_and_measurement_plan.md)
-- [Excel review workbook](curated/hd2_data.xlsx), [figures](outputs/charts/), [validation](outputs/validation_report.csv), [source register](SOURCES.md) and [dictionary](data_dictionary.md)
+- [Excel review workbook](curated/hd2_data.xlsx) (Content timing and Timing evidence contain the eight-release extension), [figures](outputs/charts/), [validation](outputs/validation_report.csv), [source register](SOURCES.md) and [dictionary](data_dictionary.md)
 - [Two-page Power BI guide](powerbi/build_guide.md), [Jira handoff](jira/jira_setup.md), [Confluence publishing guide](confluence/index.md) and [ordered human checklist](TODO_HUMAN.md)
 
 ```text
@@ -41,6 +41,7 @@ python src/collect.py reviews patches news
 python src/curate.py
 python src/validate.py --stage data
 python src/analyze.py
+python src/content_timing.py
 python src/workbook.py
 python src/validate.py
 python src/make_jira_csv.py

@@ -16,10 +16,11 @@ STATE='curated/workbook_state.json'
 INPUTS={'Hypotheses':'hypotheses','Event review':'event_reviews','Prioritization':'decision_inputs'}
 OPTIONS={
     'investigate_balance':('Investigate returning players and loadout variety','High','Medium','Unknown','September remained above baseline. Verify cohort behavior and competing content exposure.'),
-    'content_cadence':('Add a Warbond to the next balance release','Unknown','Low','High','June content and balance coincided. No isolated incremental reach or production estimate.'),
+    'content_cadence':('Evaluate patch and Warbond timing','Unknown','Low','Unknown','Selected Nov 5: eight releases show mixed outcomes for similar gaps. No optimal gap established.'),
     'policy_comms':('Test clearer account-policy communication','Medium','Low','Unknown','May reviews identify risk. Communication effectiveness and affected audiences remain unknown.')}
 NUMBERS=set('positive negative total pct_positive steam_peak_concurrent_players average_concurrent_players sampled_max_concurrent_players sample_count steam_peak_7d_mean final_rank threshold baseline_n launch_n later_n short_term_lift_pct sustained_lift_pct review_change_pp pre14_avg launch_window_max day22_35_avg'.split())
-DATES={'date','source_date','period_start','period_end','wiki_date','date_override','date_recorded','anchor_date'}
+NUMBERS.update('baseline_avg baseline_days cluster_to_content_days cluster_baseline_avg week1_avg week2_avg week3_avg week1_n week2_n week3_n cluster_sustained_lift_pct cluster_short_term_lift_pct week1_lift_pct week2_lift_pct week3_lift_pct'.split())
+DATES={'date','source_date','period_start','period_end','wiki_date','date_override','date_recorded','anchor_date','release_date','announcement_date','cluster_anchor'}
 BOOL={'is_weekend','needs_review'}
 def revision():
     hashes=[sha(ROOT/'inputs'/(name+'.csv')) for name in INPUTS.values()]
@@ -35,7 +36,7 @@ def packet(name,title,note,cols,rows,editable=()):
         if k in BOOL: return v is True or str(v).lower()=='true'
         return v
     return dict(name=name,title=title,note=note,columns=cols,rows=[[value(k,r.get(k)) for k in cols] for r in rows],editable=list(editable),
-        dates=[c for c in cols if c in DATES],percent=[c for c in cols if c in ('pct_positive','short_term_lift_pct','sustained_lift_pct')])
+        dates=[c for c in cols if c in DATES],percent=[c for c in cols if c=='pct_positive' or c.endswith('_lift_pct')])
 
 def packets():
     scores=read_csv('outputs/impact_scorecard.csv')
@@ -47,7 +48,7 @@ def packets():
     for r in read_csv('inputs/decision_inputs.csv'):
         name,impact,conf,effort,basis=OPTIONS[r['option_id']]
         ds.append(dict(r,option=name,impact_suggested=impact,confidence_suggested=conf,effort_assumption=effort,evidence_and_risk=basis))
-    sheets.append(packet('Prioritization','Options for the next discovery slot','DRAFT — requires my review. Amber cells are owner inputs. Impact = decision value. Confidence = evidence fit. Effort = assumed delivery complexity.',
+    sheets.append(packet('Prioritization','Options for the next discovery slot','Content timing selected November 5. Amber fields retain unanswered ratings and approvals.',
         ['option_id','option','impact_suggested','confidence_suggested','effort_assumption','evidence_and_risk']+dcols[1:],ds,dcols[1:]))
     path='inputs/hypotheses.csv';cols=fields(path)
     sheets.append(packet('Hypotheses','Retrospective hypotheses','Enter your own wording, direction, metric, threshold and actual date. Record whether results were already seen.',cols,read_csv(path),cols[1:]))
@@ -63,6 +64,26 @@ def packets():
         ('Events','Official posts, scheduled content and secondary timeline entries • see verification and linked news IDs.'),('Reviews','Steam histogram • positive / total by calendar month • partial periods are labeled.')]:
         path='curated/'+name.lower()+'.csv'
         sheets.append(packet(name,name,note,fields(path),read_csv(path)))
+    path='outputs/content_timing_scorecard.csv'
+    timing=read_csv(path)
+    if not timing:
+        raise SystemExit('Missing content-timing scorecard. Run src/content_timing.py before workbook.py.')
+    cols='name release_date cluster_to_content_days short_term_lift_pct week1_lift_pct week2_lift_pct week3_lift_pct sustained_lift_pct'.split()
+    sheets.append(packet('Content timing','Patch and Warbond release timing',
+        'Python snapshot. All activity changes use the prior 14-day average daily Steam peak as baseline.',cols,timing))
+    labels=['Warbond','Release date','Patch gap (days)','Launch max vs baseline','Week 1 mean vs baseline','Week 2 mean vs baseline','Week 3 mean vs baseline','Later mean vs baseline']
+    sheets[-1]['columns']=labels
+    sheets[-1]['dates']=['Release date']
+    sheets[-1]['percent']=labels[3:]
+    sheets[-1]['annotations']=[
+        [16,'Finding: Similar release gaps produced mixed later activity. This sample establishes no preferred gap.'],
+        [18,'Recommendation: Compare similar content scopes before changing cadence. Review launch, weekly and later activity.'],
+        [20,'Launch = days 0–3 maximum. Weeks = days 0–6, 7–13, 14–20 means. Later = days 22–35 mean.'],
+        [22,'Gap = days from earliest official patch within the preceding seven days, including release day. Hotfixes count.'],
+        [24,'Steam concurrency describes aggregate activity. It does not identify retained players or isolate a release effect.']]
+    cols='content_id name release_date announcement_date date_basis date_evidence source_url source_path news_id baseline_avg baseline_n launch_window_max launch_n day22_35_avg later_n preceding_patch_ids preceding_patch_dates cluster_anchor cluster_baseline_avg cluster_sustained_lift_pct activity_status cluster_activity_status'.split()
+    sheets.append(packet('Timing evidence','Release dates and calculation evidence',
+        'Official announcement bodies supply release dates. Scheduled dates are distinguished from same-day availability.',cols,timing))
     return sheets
 
 def fallback(sheets,target):
@@ -88,6 +109,7 @@ def fallback(sheets,target):
         t.tableStyleInfo=TableStyleInfo(name='TableStyleMedium2',showRowStripes=True,showColumnStripes=False);sh.add_table(t);sh.freeze_panes='B6'
         if 'review_revision' in s:
             sh['A12']='Input revision';sh['B12']=s['review_revision']
+        for row,text in s.get('annotations',[]):sh.cell(row,1,text)
     w.save(target)
 
 def build(preview=False):
@@ -103,6 +125,7 @@ def build(preview=False):
             node=runtime/'node/bin/node';mods=runtime/'node/node_modules'
             (tmp/'node_modules').symlink_to(mods,target_is_directory=True)
             shutil.copy(ROOT/'src/workbook.mjs',tmp/'build.mjs')
+            if OUT.exists():shutil.copyfile(OUT,tmp/'existing.xlsx')
             (tmp/'data.json').write_text(json.dumps(sheets))
             subprocess.run([str(node),'build.mjs',str(ROOT/'outputs/workbook_previews') if preview else ''],cwd=tmp,check=True)
         else: fallback(sheets,target)

@@ -1,12 +1,12 @@
 # Helldivers 2 | LiveOps planning review
-**Decision requested.** Should the next discovery slot examine whether returning players used a broader range of effective loadouts following September's balance changes? **DRAFT — requires my review.**
+**Current direction.** Evaluate patch and Warbond release timing using public evidence. Hansen selected this investigation on November 5, 2026. The proposed release-review process remains draft wording for owner review. [Eight-Warbond extension](../case-study/content_timing.md).
 
 | Read | Purpose |
 |---|---|
 | [Problem brief](01_problem_brief.md) | Identify the decision, reader and scope. |
 | [Evidence and three studies](02_evidence_and_event_studies.md) | Trace the comparisons and competing explanations. |
 | [Options and prioritization](03_options_and_prioritization.md) | Compare discovery, content cadence and policy communication. |
-| [Proposal and measurement plan](04_recommendation_and_measurement_plan.md) | Define the cohort, event schema, guardrails and decision rule. |
+| [Proposal and measurement plan](04_recommendation_and_measurement_plan.md) | Define public-data checkpoints, comparison rules and limits. |
 | [Decision log and research guides](05_decision_log.md) | Review assumptions and questions for optional interviews. |
 
 ## Manual publishing guide

@@ -71,5 +71,7 @@ Excel / CSV Players,PASS,1000 rows and all columns reconciled
 Excel / CSV Releases,PASS,101 rows and all columns reconciled
 Excel / CSV Events,PASS,192 rows and all columns reconciled
 Excel / CSV Reviews,PASS,34 rows and all columns reconciled
+Excel / CSV Content timing,PASS,8 rows and all columns reconciled
+Excel / CSV Timing evidence,PASS,8 rows and all columns reconciled
 Export impact_scorecard,PASS,Recomputed from curated tables and human inputs
 Export sensitivity_checks,PASS,Recomputed from curated tables and human inputs
