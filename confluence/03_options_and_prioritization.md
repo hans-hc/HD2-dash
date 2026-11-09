@@ -1,14 +1,13 @@
-# Options for the next planning review
-**Direction selected by Hansen: content timing, November 5, 2026. Final recommendation wording remains under review.** No numerical ratings, effort estimates or full ranking have been approved.
+# Why I chose content timing
+After reviewing the initial cases, I chose to investigate content timing using evidence available to an independent analyst.
 
-| Option | Evidence and value | Limits and dependencies | Current disposition |
+| Option | Why it was worth considering | What was missing | Decision |
 |---|---|---|---|
-| Evaluate patch and Warbond release sequences | Eight 2024 Warbonds provide dated content and patch sequences alongside daily activity. Similar gaps have mixed later outcomes. A reusable review can distinguish launch attention from later activity. | Release scope, lifecycle, promotions and other updates differ. Public data cannot isolate timing or establish an optimal interval. | Selected investigation; public-data extension completed. Recommend regular checkpoints before changing cadence. |
-| Investigate September loadout viability | The original September case remained above baseline, and the notes describe broader weapon choices. | Testing the mechanism requires player/mission/loadout data unavailable to this independent study. | Retained as a possible future internal investigation; not the current project recommendation. |
-| Investigate account access and policy communication | May review sentiment changed sharply around the account-linking episode. | Monthly data cannot separate announcement from reversal or distinguish comprehension from eligibility barriers. | Retained as a separate access-risk question. |
+| Compare patch and Warbond timing | Official dates and daily Steam peaks support an eight-release comparison. | Comparable content, promotion exposure and internal player behavior are not controlled. | Selected. Complete the comparison and recommend a repeatable release review, without choosing a fixed gap. |
+| Investigate September loadout variety | The patch described broader weapon choices, and later activity stayed above baseline. | Testing whether loadouts changed repeat play requires internal mission and equipment data. | Keep as a possible future internal investigation. |
+| Investigate account access and communication | May's review sentiment changed sharply around the account-linking episode. | Monthly review buckets cannot separate the announcement from reversal or distinguish confusion from access barriers. | Keep as a separate access-risk question. |
 
-**Tradeoff.** A content-timing study is feasible with the saved public evidence. Its useful output is a repeatable review of release sequences and evidence against choosing a schedule from one favorable example. The extension does not support committing to same-day, two-day or seven-day spacing. The loadout and policy options require different evidence to establish their mechanisms.
+## Tradeoff
+Content timing was feasible with the public data. The useful result was finding that September's favorable example did not repeat consistently across similar gaps. That supports comparing similar content and reviewing activity over several weeks before changing the schedule.
 
-The legacy `content_cadence` ID previously described pairing another Warbond with a balance patch. Its current meaning is investigating cadence before committing production. The Excel option wording now matches this direction. The Content timing and Timing evidence sheets contain the eight-release comparison and its source trail. Unanswered ratings and approval fields remain blank.
-
-[Expanded analysis](../case-study/content_timing.md) · [Measurement plan](04_recommendation_and_measurement_plan.md)
+I did not assign numerical effort or business-impact scores: the studio's capacity, costs and player-level data were unavailable. Selecting content timing is a choice of investigation, not a claim that another timing strategy would improve retention or revenue.

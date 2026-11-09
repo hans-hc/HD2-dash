@@ -30,8 +30,11 @@ The output is `Hansen_Cheng_Helldivers2_Case_Study.pdf` in this directory. Rebui
 
 ## Supporting files link
 
-Set `\SupportingFilesURL` in `submission_links.tex` to the real Drive folder URL. With an empty value, the PDF omits the link. Use that same URL in `email_draft.md`. Give the recipient view access and check the link while signed out.
+Set `\SupportingFilesURL` in `submission_links.tex` to the real Drive folder URL. With an empty value, the PDF omits the link. Give the recipient view access and check the link while signed out.
 
 ## Refresh the report
 
 Replace `assets/powerbi-report.pdf` with a new two-page Power BI export and rebuild. The LaTeX source controls the written pages; the native Power BI report remains the editable source for its charts. Update the page reference in the Workflow paragraph if adding written pages.
+
+## Submission files
+The final four-page PDF is the primary submission. `Hansen_Cheng_HD2_Live_Links.pdf` contains the six supplied shared Confluence URLs. The standalone Power BI export is under `assets/`. Earlier narrative and email drafts were removed after the final submission was prepared.

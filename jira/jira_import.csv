@@ -1,113 +1,113 @@
 Work item ID,Work type,Parent,Summary,Description,Priority,Labels
-1,Epic,,Discovery and scope,"Define the decision and feasible public evidence.
-Acceptance: Reader, limits and source intake are documented and reviewed.
-Owner: Owner
-Local evidence: confluence/01_problem_brief.md
-Local work state: Review
-Priority rationale: Defines the work that follows. (DRAFT — requires my review)
+1,Epic,,Define the case-study question and scope,"Keep the independent study focused on a decision supported by public evidence.
+Acceptance: Question, Steam-only scope and limits are stated in the case study.
+Owner: Hansen Cheng
+Local evidence: case-study/Hansen_Cheng_Helldivers2_Case_Study.pdf
+Local work state: Done
+Priority rationale: Defines the work that follows.
 Depends on: none recorded",High,hd2-local-d00
-2,Epic,,Evidence and analysis,"Make the case comparisons reproducible.
-Acceptance: All selected anchors, windows and uncertainty are traceable.
-Owner: Owner
-Local evidence: outputs/validation_report.csv
-Local work state: Review
-Priority rationale: Protects the validity of the proposal. (DRAFT — requires my review)
+2,Epic,,Collect and compare public evidence,"Make the event-window comparisons traceable and repeatable.
+Acceptance: Sources, complete windows, alternative baselines and competing events are documented.
+Owner: Hansen Cheng
+Local evidence: case-study/content_timing.md
+Local work state: Done
+Priority rationale: Protects the validity of the proposal.
 Depends on: D00",High,hd2-local-e00
-3,Epic,,Recommendation and communication,"Turn evidence into a focused proposal and a usable portfolio.
-Acceptance: Owner approves recommendation and publishes reviewed materials.
-Owner: Owner
+3,Epic,,Explain and publish the findings,"Turn the results into a clear recommendation and supporting project documentation.
+Acceptance: Case-study PDF, Power BI report and linked Jira/Confluence documentation are available.
+Owner: Hansen Cheng
 Local evidence: confluence/index.md
-Local work state: Backlog
-Priority rationale: Depends on accepted analysis. (DRAFT — requires my review)
+Local work state: Done
+Priority rationale: Depends on accepted analysis.
 Depends on: E00",Medium,hd2-local-r00
-4,Task,1,Frame the planning decision,"Narrow the question to the next discovery investment.
-Acceptance: Reader, decision, alternatives, success and scope appear in brief.
-Owner: Project owner
+4,Task,1,Frame the release-timing question,"Ask whether patch-to-Warbond spacing was associated with later Steam activity.
+Acceptance: Question, audience, eight-release scope and feasible public-data decision are written down.
+Owner: Hansen Cheng
 Local evidence: confluence/01_problem_brief.md
-Local work state: Draft ready for review
-Priority rationale: Avoids building a dashboard without a decision. (DRAFT — requires my review)
+Local work state: Done
+Priority rationale: Avoids building a dashboard without a decision.
 Depends on: none recorded",High,hd2-local-d01
 5,Task,1,Inspect the manual player export,"Separate daily buckets from intraday samples.
 Acceptance: Raw snapshot has a hash, schema, date profile and benchmark check.
-Owner: Pipeline
+Owner: Hansen Cheng
 Local evidence: curated/coverage.json
-Local work state: Local implementation complete
-Priority rationale: Every activity metric depends on the grain. (DRAFT — requires my review)
+Local work state: Done
+Priority rationale: Every activity metric depends on the grain.
 Depends on: D01",High,hd2-local-d02
-6,Task,1,Record retrospective hypotheses,"Capture the owner's expectations and timing.
-Acceptance: Each intended assessment has wording, direction, metric, threshold and actual date, or is explicitly declined.
-Owner: Human owner
-Local evidence: inputs/hypotheses.csv
-Local work state: Pending
-Priority rationale: Keeps retrospective expectations transparent. (DRAFT — requires my review)
+6,Task,1,Document the retrospective study design,"Keep the analysis timing and sample selection clear.
+Acceptance: Study is identified as retrospective. The eight-release sample and windows are stated; no preregistered hypothesis is claimed.
+Owner: Hansen Cheng
+Local evidence: case-study/content_timing.md
+Local work state: Done
+Priority rationale: Keeps retrospective expectations transparent.
 Depends on: D01",High,hd2-local-d03
-7,Task,1,Confirm chart timezone and rollup interpretation,"Verify the empirical UTC/daily interpretation from the browser.
-Acceptance: Owner records evidence for chart-day semantics or marks the inference provisional.
-Owner: Human owner
-Local evidence: inputs/README.md
-Local work state: Pending
-Priority rationale: Could change daily alignment and eligibility. (DRAFT — requires my review)
+7,Task,1,Document daily grouping and timezone limits,"Explain which exported player values support daily comparisons.
+Acceptance: Historical daily peaks and recent sampled maxima are distinguished. The missing timezone metadata and provisional UTC interpretation are disclosed.
+Owner: Hansen Cheng
+Local evidence: SOURCES.md
+Local work state: Done
+Priority rationale: Could change daily alignment and eligibility.
 Depends on: D02",High,hd2-local-d04
 8,Task,2,Collect immutable public evidence,"Save official news, wiki history and review histogram.
 Acceptance: Manifest, hashes and source-specific filters resolve to local snapshots.
-Owner: Pipeline
+Owner: Hansen Cheng
 Local evidence: curated/source_register.csv
-Local work state: Local implementation complete
-Priority rationale: Makes observed claims reproducible. (DRAFT — requires my review)
+Local work state: Done
+Priority rationale: Makes observed claims reproducible.
 Depends on: D01",High,hd2-local-e01
-9,Task,2,Verify three event mappings,"Match official UTC dates, policy amendment and release aliases.
-Acceptance: All anchors link to sources; owner reviews suggested release classifications.
-Owner: Human owner
-Local evidence: curated/events.csv
-Local work state: Source checks complete; owner review pending
-Priority rationale: Incorrect anchors invalidate every window. (DRAFT — requires my review)
+9,Task,2,Check patch and Warbond dates against official posts,"Use release dates rather than announcement publication dates.
+Acceptance: Eight Warbonds have news IDs, date cues and saved sources. Scheduled availability and same-day availability are distinguished.
+Owner: Hansen Cheng
+Local evidence: inputs/content_releases_2024.csv
+Local work state: Done
+Priority rationale: Incorrect anchors invalidate every window.
 Depends on: E01",High,hd2-local-e02
-10,Task,2,Audit windows and monthly sentiment,"Check counts, missing values, weighted positivity and baseline sensitivity.
-Acceptance: Validation passes integrity checks and discloses coverage warnings.
-Owner: Pipeline
-Local evidence: outputs/validation_report.csv
-Local work state: Local implementation complete
-Priority rationale: Separates defensible results from missing observations. (DRAFT — requires my review)
+10,Task,2,Check event windows and alternative baselines,"Make missing observations and baseline sensitivity visible.
+Acceptance: All eight cases have complete main windows. Seven- and 28-day baselines and pre-patch-sequence anchors are compared; no sampled maxima substitute for daily peaks.
+Owner: Hansen Cheng
+Local evidence: outputs/content_timing_scorecard.csv | outputs/content_timing_sensitivity.csv
+Local work state: Done
+Priority rationale: Separates defensible results from missing observations.
 Depends on: D02|E01",High,hd2-local-e03
-11,Task,2,Review nearby events and trends,"Identify alternative explanations per selected case.
-Acceptance: Review same-day content, pre-trends, later patches and unknown sales exposure.
-Owner: Human owner
-Local evidence: confluence/02_evidence_and_event_studies.md
-Local work state: Draft ready for review
-Priority rationale: Limits over-attribution. (DRAFT — requires my review)
+11,Task,2,Review nearby releases and other explanations,"Avoid attributing all activity changes to the release gap.
+Acceptance: September and December content, overlapping updates, existing trends and the small sample are discussed.
+Owner: Hansen Cheng
+Local evidence: case-study/content_timing.md
+Local work state: Done
+Priority rationale: Limits over-attribution.
 Depends on: E02|E03",High,hd2-local-e04
-12,Task,3,Rank three product options,"Balance decision value, confidence and assumed effort.
-Acceptance: Owner records ranking, tradeoffs and unresolved dependencies.
-Owner: Human owner
-Local evidence: inputs/decision_inputs.csv
-Local work state: Pending
-Priority rationale: Determines the recommendation. (DRAFT — requires my review)
+12,Task,3,Compare investigation options and select content timing,"Choose an investigation that can be completed using the available evidence.
+Acceptance: Content timing is compared with loadout viability and policy communication. The selected direction and its limits are recorded; no invented effort scores are used.
+Owner: Hansen Cheng
+Local evidence: confluence/03_options_and_prioritization.md
+Local work state: Done
+Priority rationale: Determines the recommendation.
 Depends on: E04",High,hd2-local-r01
-13,Task,3,Review the investigation design,"Specify a cohort diagnostic, guardrails and falsification criteria.
-Acceptance: Owner signs off on the primary metric, thresholds and follow-up decision.
-Owner: Human owner
+13,Task,3,Write the 35-day release-review recommendation,"Translate the mixed timing results into a practical planning review.
+Acceptance: Recommendation specifies launch, weekly and days 22-35 checks, comparable content and overlapping-release notes. Future team implementation is distinguished from completed analysis.
+Owner: Hansen Cheng
 Local evidence: confluence/04_recommendation_and_measurement_plan.md
-Local work state: Draft ready for review
-Priority rationale: Prevents an aggregate trend from being treated as a retention result. (DRAFT — requires my review)
+Local work state: Done
+Priority rationale: Prevents an aggregate trend from being treated as a retention result.
 Depends on: R01",High,hd2-local-r02
-14,Task,3,Assemble and verify two Power BI pages,"Build the report locally on Windows.
-Acceptance: Each selector, month filter, card and relative-day trend matches the Python outputs.
-Owner: Human owner
-Local evidence: powerbi/build_guide.md
-Local work state: Build kit ready; Desktop assembly pending
-Priority rationale: Needed for the portfolio walkthrough. (DRAFT — requires my review)
+14,Task,3,Build and check the two-page Power BI report,"Present the eight-release activity and timing comparisons in Power BI web.
+Acceptance: Page one shows launch and later changes for eight Warbonds. Page two has an eight-row table and eight scatter points. Percentages, labels and the two-page PDF export are checked.
+Owner: Hansen Cheng
+Local evidence: case-study/assets/powerbi-report.pdf
+Local work state: Done
+Priority rationale: Needed for the portfolio walkthrough.
 Depends on: E03",Medium,hd2-local-r03
-15,Task,3,Review portfolio narrative and decision log,"Finalize the case study and record actual feedback.
-Acceptance: Claims trace to evidence and distinguish performed work from proposed research.
-Owner: Human owner
-Local evidence: case-study/case_study_draft.md
-Local work state: Draft ready for review
-Priority rationale: Makes ownership and reasoning clear. (DRAFT — requires my review)
+15,Task,3,Finalize the editable case-study PDF,"Explain the findings and recommendation in a concise standalone submission.
+Acceptance: Four-page PDF compiles from LaTeX, includes source and Drive links, and describes the completed analysis and its limits.
+Owner: Hansen Cheng
+Local evidence: case-study/Hansen_Cheng_Helldivers2_Case_Study.tex
+Local work state: Done
+Priority rationale: Makes ownership and reasoning clear.
 Depends on: R02",Medium,hd2-local-r04
-16,Task,3,Publish reviewed materials and record walkthrough,"Prepare final portfolio artifacts on the owner's chosen services.
-Acceptance: Owner completes Jira import, Confluence review, walkthrough and publication checklist.
-Owner: Human owner
-Local evidence: TODO_HUMAN.md
-Local work state: Pending
-Priority rationale: Only approved material should be shared. (DRAFT — requires my review)
+16,Task,3,Publish Confluence pages and link the Jira work,"Keep the findings, decisions and delivery status together.
+Acceptance: Confluence parent and five child pages are published, evidence is linked, Jira keys are recorded and the board reflects verified completion. Recipient access is checked before sharing.
+Owner: Hansen Cheng
+Local evidence: confluence/index.md | jira/jira_key_mapping.csv
+Local work state: Done
+Priority rationale: Only approved material should be shared.
 Depends on: R03|R04",Medium,hd2-local-r05

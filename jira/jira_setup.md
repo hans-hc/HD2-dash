@@ -1,11 +1,18 @@
-# Set up the actual portfolio project in Jira Cloud
-The master backlog contains 16 local work items, including three Epics. These are portfolio tasks. State reflects work in this checkout. Generation of a CSV does not change the state in Jira. Priorities are **DRAFT — requires my review**.
+# Jira project record
 
-1. Review project_backlog.csv and edit purpose, acceptance and priority there. Keep local_id stable. The proposed project key is HD2. Create an appropriate Jira project/space yourself, enable Epic and Task, and choose Backlog → In Progress → Review → Done. A backlog board column might instead be represented through a To Do status. Decide which statuses to map before importing.
-2. Run `python src/make_jira_csv.py`. Each Epic is emitted before its children. The temporary Work item ID is a sequential number within this import only. Parent contains that parent's numeric import ID. Local IDs D00/E00/R00 and task IDs appear as stable labels and in the master. Jira assigns real keys after creation.
-3. With appropriate admin access, choose Settings → System → External system import → CSV. If necessary select the old experience to import into the existing project. Select UTF-8 and comma delimiter. Use Jira's validation/preview before committing an import. The normal bulk-create wizard may expose fewer hierarchy fields. Follow the admin importer guidance. [Atlassian CSV documentation](https://support.atlassian.com/jira-cloud-administration/docs/import-data-from-a-csv-file/) · [Parent mapping guidance](https://support.atlassian.com/jira/kb/keep-issue-parent-child-mapping-during-csv-import-to-jira-cloud/)
-4. Map Work item ID → Work item ID (or Issue ID), Work type → Work type/Issue type, Parent → Parent, Summary → Summary, Description → Description, Priority → Priority and Labels → Labels. Preview Epic/Task value mappings and the priorities available in your project. Leave assignees blank. No custom fields are required. Acceptance, owner role, evidence path, dependencies and local state are included in Description.
-5. If Parent is unavailable, resolve the permissions/screen or import the Epics first, record their Jira keys, then link each task to its Epic manually using the master's parent_id. Follow the dependencies separately with “blocks/is blocked by” links once real keys exist. A repository-relative evidence path can be replaced by a public link after the owner publishes it. Optional custom Acceptance Criteria must be multiline text and Evidence URL must be a URL field.
-6. Check two child links and all three Epic child counts against the master. The CSV intentionally omits Status. Move an item after verifying its acceptance criteria. Review local-only completed work and human tasks independently. Save the import configuration, result log and local-ID → Jira-key mapping. Search `labels in (hd2-local-d00, hd2-local-e00, hd2-local-r00)` and inspect matching items before any rerun. A repeated import without real keys creates duplicates. Update existing records using resolved Work item Keys in a separate update file.
+**Project:** Helldivers 2 LiveOps Case Study · **Key:** HD2LO · Team-managed Kanban.
 
-No Jira operations have been performed by this project. Accounts being present does not establish import permissions or project configuration.
+[Open board](https://hansencheng859.atlassian.net/jira/software/projects/HD2LO/boards/2)
+
+The owner imported three Epics and 13 tasks, checked the hierarchy, and confirmed all 16 items Done after publishing and checking the documentation. This board records the portfolio work; it does not represent a game-team implementation or earlier project-management activity.
+
+## Files
+- `project_backlog.csv`: editable local record of purposes, acceptance criteria, evidence and completion.
+- `jira_key_mapping.csv`: actual HD2LO keys observed in the owner's Jira screenshots, with direct links.
+- `jira_import.csv`: initial-create import format generated from the master. **Do not reimport into HD2LO: it can create duplicates.** Its numeric IDs are import-local IDs, not existing Jira keys. Status is deliberately omitted.
+
+The Epics are HD2LO-1 (scope; four children), HD2LO-2 (evidence; four children) and HD2LO-3 (findings/publication; five children). All items are assigned to Hansen Cheng according to the owner's completion confirmation; this repository is not a live Jira export.
+
+For a separate fresh project only, regenerate the import with `python src/make_jira_csv.py` and map Work item ID, Work type, Parent, Summary, Description, Priority and Labels. Apply verified statuses manually. For the existing board, edit the real items using their mapped keys.
+
+Live changes and local CSV edits do not synchronize automatically. Shared Confluence documentation is indexed in [confluence/index.md](../confluence/index.md).
